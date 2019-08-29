@@ -3,17 +3,17 @@ const assert = require('assert').strict;
 describe('equal', () => {
   describe('object', () => {
     it('object', () => {
-      assert.deepStrictEqual({a: 1}, {a: '1'});
+      assert.notDeepStrictEqual({a: 1}, {a: '1'});
     });
     const date = new Date();
     const obj = {};
     const fakeDate = {};
     Object.setPrototypeOf(fakeDate, Date.prototype);
     it('object prototype', () => {
-      assert.deepStrictEqual(obj, fakeDate);
+      assert.notDeepStrictEqual(obj, fakeDate);
     });
     it('object prototype label', () => {
-      assert.deepStrictEqual(date, fakeDate);
+      assert.notDeepStrictEqual(date, fakeDate);
     });
   });
   describe('value', () => {
@@ -21,7 +21,7 @@ describe('equal', () => {
       assert.deepStrictEqual(NaN, NaN);
     });
     it('unwrapped numbers', () => {
-      assert.deepStrictEqual(new Number(1), new Number(2));
+      assert.notDeepStrictEqual(new Number(1), new Number(2));
     });
     it('unwrapped string object', () => {
       assert.deepStrictEqual(new String('foo'), Object('foo'));
@@ -30,7 +30,7 @@ describe('equal', () => {
       assert.deepStrictEqual(-0, -0);
     });
     it('diff zero', () => {
-      assert.deepStrictEqual(0, -0);
+      assert.notDeepStrictEqual(0, -0);
     });
   });
   describe('symbol', () => {
@@ -40,7 +40,7 @@ describe('equal', () => {
       assert.deepStrictEqual({[symbol1]: 1}, {[symbol1]: 1});
     });
     it('diff symbol', () => {
-      assert.deepStrictEqual({[symbol1]: 1}, {[symbol2]: 1});
+      assert.notDeepStrictEqual({[symbol1]: 1}, {[symbol2]: 1});
     });
   });
   describe('weak map', () => {
@@ -52,7 +52,7 @@ describe('equal', () => {
       assert.deepStrictEqual(weakMap1, weakMap2);
     });
     it('weakMap1, weakMap3 has a property that weakMap1 does not contain', () => {
-      assert.deepStrictEqual(weakMap1, weakMap3);
+      assert.notDeepStrictEqual(weakMap1, weakMap3);
     });
   });
 });
