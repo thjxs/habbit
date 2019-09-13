@@ -15,8 +15,8 @@ function delay(seconds) {
 }
 
 it('#async 6 3', (done) => {
-    Promise.race([delay(6), delay(3)]).then(value => {
-        assert.strictEqual(value, 3);
+    Promise.race([delay(3), delay(1)]).then(value => {
+        assert.strictEqual(value, 1);
         done();
     });
 });
