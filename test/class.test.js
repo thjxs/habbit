@@ -1,4 +1,4 @@
-var Car = require('../class.js');
+var Car = require('../Car.js');
 var Point = require('../point.js');
 
 const assert = require('assert');
