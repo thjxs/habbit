@@ -11,6 +11,7 @@ const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 
 const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
 
+// error first
 const fnPromise = (fn) => (...args) => {
   return new Promise((resolve, reject) => {
     fn(...args, (err, data) => {
