@@ -36,4 +36,21 @@ describe('# adapter', function () {
     const fn = adapter.overArgs((x, y, z) => [x, y, z], [square, double, square]);
     assert.deepStrictEqual(fn(9, 3, 2), [81, 6, 4]);
   });
+  it('# convert callbacks to promise', () => {
+    async function fn(sec, callback) {
+      let result = await sec;
+      if (result > 3) {
+        callback(false, 'we');
+      } else {
+        callback(true);
+      }
+    }
+    const fnPromise = adapter.fnPromise(fn);
+    fnPromise(5).then(res => {
+      assert.strictEqual(res, 'we');
+    });
+    fnPromise(2).catch(err => {
+      assert.strictEqual(err, true);
+    });
+  });
 });

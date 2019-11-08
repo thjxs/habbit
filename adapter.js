@@ -11,11 +11,21 @@ const over = (...fns) => (...args) => fns.map(fn => fn.apply(null, args));
 
 const overArgs = (fn, transforms) => (...args) => fn(...args.map((val, i) => transforms[i](val)));
 
+const fnPromise = (fn) => (...args) => {
+  return new Promise((resolve, reject) => {
+    fn(...args, (err, data) => {
+      if (err) reject(err);
+      resolve(data);
+    });
+  });
+};
+
 module.exports = {
   ary,
   call,
   collectInto,
   flip,
   over,
-  overArgs
+  overArgs,
+  fnPromise
 };
