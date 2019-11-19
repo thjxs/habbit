@@ -53,4 +53,23 @@ describe('# adapter', function () {
       assert.strictEqual(err, true);
     });
   });
+  it('# Performs left-to-right function composition', function () {
+    const add5 = x => x + 5;
+    const multiply = (x , y) => x * y;
+    const multiplyAddAdd5 = adapter.pipeFunctions(multiply, add5);
+    assert.strictEqual(multiplyAddAdd5(5, 2), 15);
+  });
+  it('# Reorders arguments in invoked function', function () {
+    const re = adapter.rearg(function (...args) {
+      return args;
+    }, [2, 1, 0]);
+    assert.deepStrictEqual(re('a', 'b', 'c'), ['c', 'b', 'a']);
+  });
+  it('# Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.', function () {
+    const arrayMax = adapter.spreadOver(Math.max);
+    assert.strictEqual(arrayMax([1, 2, 3]), 3);
+  });
+  it('# Discards arguments after the first one', function () {
+    assert.deepStrictEqual(['1', '2', '3'].map(adapter.unary(parseInt)), [1, 2, 3]);
+  });
 });
