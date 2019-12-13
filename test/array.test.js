@@ -3,13 +3,25 @@ const assert = require('assert');
 
 describe('intersection', () => {
   it('1', () => {
-    assert.deepStrictEqual(arr.intersec([1], [1,2,3]), [1]);
+    assert.deepStrictEqual(arr.intersect([1], [1,2,3]), [1]);
   });
-  it('123, 324', () => {
-    assert.deepStrictEqual(arr.intersec([1,2,3], [3,2,4]), [3,2]);
+  it('1223, 23242', () => {
+    assert.deepStrictEqual(arr.intersect([1,2,2,3], [2,3,2,4,2]), [2,3,2]);
   });
   it('12, 34', () => {
-    assert.deepStrictEqual(arr.intersec([1,2], [3,4]), []);
+    assert.deepStrictEqual(arr.intersect([1,2], [3,4]), []);
+  });
+});
+
+describe('intersection v1', () => {
+  it('1', () => {
+    assert.deepStrictEqual(arr.intersect_1([1], [1, 2, 3]), [1]);
+  });
+  it('1223, 23242', () => {
+    assert.deepStrictEqual(arr.intersect_1([1,2,2,3], [2,3,2,4,2]), [2,3,2]);
+  });
+  it('12, 34', () => {
+    assert.deepStrictEqual(arr.intersect_1([1,2], [3,4]), []);
   });
 });
 

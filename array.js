@@ -1,4 +1,4 @@
-function intersec (nums1, nums2) {
+function intersect (nums1, nums2) {
   const map = {};
   const res = [];
   nums1.forEach(function (v) {
@@ -15,6 +15,11 @@ function intersec (nums1, nums2) {
     }
   });
   return res;
+}
+
+function intersect_1(nums1, nums2) {
+  const s = new Set(nums1);
+  return nums2.filter(x => s.has(x));
 }
 
 function moveZeroes (nums) {
@@ -55,7 +60,8 @@ function rotate(matrix) {
   }
 }
 module.exports = {
-  intersec,
+  intersect,
+  intersect_1,
   moveZeroes,
   removeDuplicatezs,
   rotate
