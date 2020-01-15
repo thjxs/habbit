@@ -3,7 +3,7 @@ const assert = require('assert').strict;
 describe('equal', () => {
   describe('object', () => {
     it('object', () => {
-      assert.notDeepStrictEqual({a: 1}, {a: '1'});
+      assert.notDeepStrictEqual({ a: 1 }, { a: '1' });
     });
     const date = new Date();
     const obj = {};
@@ -20,12 +20,6 @@ describe('equal', () => {
     it('equal NaN', () => {
       assert.deepStrictEqual(NaN, NaN);
     });
-    it('unwrapped numbers', () => {
-      assert.notDeepStrictEqual(new Number(1), new Number(2));
-    });
-    it('unwrapped string object', () => {
-      assert.deepStrictEqual(new String('foo'), Object('foo'));
-    });
     it('zero', () => {
       assert.deepStrictEqual(-0, -0);
     });
@@ -37,10 +31,10 @@ describe('equal', () => {
     const symbol1 = Symbol();
     const symbol2 = Symbol();
     it('same symbol', () => {
-      assert.deepStrictEqual({[symbol1]: 1}, {[symbol1]: 1});
+      assert.deepStrictEqual({ [symbol1]: 1 }, { [symbol1]: 1 });
     });
     it('diff symbol', () => {
-      assert.notDeepStrictEqual({[symbol1]: 1}, {[symbol2]: 1});
+      assert.notDeepStrictEqual({ [symbol1]: 1 }, { [symbol2]: 1 });
     });
   });
   describe('weak map', () => {

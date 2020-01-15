@@ -10,11 +10,11 @@ function testParametersWithDefaultValue(p) {
   return p;
 }
 
-describe('#function paramaters', function () {
-  it('#input p', function () {
+describe('#function paramaters', function() {
+  it('#input p', function() {
     assert.strictEqual(test(1), 1);
   });
-  it('#test parameters with default value', function () {
+  it('#test parameters with default value', function() {
     assert.strictEqual(testParametersWithDefaultValue(), defaultValue);
   });
 });

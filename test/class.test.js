@@ -24,7 +24,7 @@ describe('#class', () => {
   });
 });
 
-describe('#prototype', function () {
+describe('#prototype', function() {
   it('# r', () => {
     var p = new Point(3, 4);
     assert.strictEqual(p.r(), 5);

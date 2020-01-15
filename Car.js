@@ -1,7 +1,7 @@
-class Car{
-    constructor() {
-      this.arr = [];
-    }
+class Car {
+  constructor() {
+    this.arr = [];
+  }
 }
 
 Car.prototype.condition = [];

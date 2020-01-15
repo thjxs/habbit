@@ -1,5 +1,5 @@
 function firstUniqChar(s) {
-  let sa = s.split("");
+  let sa = s.split('');
   let index;
   let value;
   let tmp = [];
@@ -26,11 +26,11 @@ function firstUniqChar(s) {
 function matchParentheses(str) {
   const stack = [];
   const mapper = {
-    ")": "(",
-    "]": "[",
-    "}": "{"
+    ')': '(',
+    ']': '[',
+    '}': '{'
   };
-  const leftParentheses = ["(", "[", "{"];
+  const leftParentheses = ['(', '[', '{'];
 
   for (let i in str) {
     if (leftParentheses.indexOf(str[i]) > -1) {
@@ -50,9 +50,9 @@ function matchParentheses(str) {
 
 function reverseString(str) {
   return str
-    .split("")
+    .split('')
     .reverse()
-    .join("");
+    .join('');
 }
 
 /**

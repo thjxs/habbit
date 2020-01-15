@@ -2,8 +2,8 @@ function isObject(item) {
   return item && typeof item === 'object' && !Array.isArray(item);
 }
 
-module.exports = function deepmerge(target, source, options = {clone: true}) {
-  const output = options.clone ? {...target} : target;
+module.exports = function deepmerge(target, source, options = { clone: true }) {
+  const output = options.clone ? { ...target } : target;
 
   if (isObject(target) && isObject(source)) {
     Object.keys(source).forEach(key => {
