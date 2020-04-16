@@ -1,11 +1,11 @@
 const assert = require('assert');
 const adapter = require('../adapter');
 
-describe('# adapter', function() {
+describe('# adapter', function () {
   it('# call provider function with up to n arguments', () => {
     const firstTwoMax = adapter.ary(Math.max, 2);
     assert.deepStrictEqual(
-      [[2, 6, 'a'], [6, 3, 8], [10]].map(x => firstTwoMax(...x)),
+      [[2, 6, 'a'], [6, 3, 8], [10]].map((x) => firstTwoMax(...x)),
       [6, 6, 10]
     );
   });
@@ -18,9 +18,9 @@ describe('# adapter', function() {
   });
   it('# Given a function return a closure that collects all inputs into an array-acception function', () => {
     const obj = {
-      map: function(args) {
-        return args.map(item => item * 2);
-      }
+      map: function (args) {
+        return args.map((item) => item * 2);
+      },
     };
     const timesTwo = adapter.collectInto(obj.map);
     assert.deepStrictEqual(timesTwo(1, 2, 3), [2, 4, 6]);
@@ -37,12 +37,12 @@ describe('# adapter', function() {
     assert.deepStrictEqual(minMax(1, 2, 3, 4, 5), [1, 5]);
   });
   it('# use Array.prototype.map() to apply transforms to args in combination with the spread operator(...) to pass the transformed arguments to fn', () => {
-    const square = n => n * n;
-    const double = n => n * 2;
+    const square = (n) => n * n;
+    const double = (n) => n * 2;
     const fn = adapter.overArgs((x, y, z) => [x, y, z], [
       square,
       double,
-      square
+      square,
     ]);
     assert.deepStrictEqual(fn(9, 3, 2), [81, 6, 4]);
   });
@@ -56,37 +56,37 @@ describe('# adapter', function() {
       }
     }
     const fnPromise = adapter.fnPromise(fn);
-    fnPromise(5).then(res => {
+    fnPromise(5).then((res) => {
       assert.strictEqual(res, 'we');
     });
-    fnPromise(2).catch(err => {
+    fnPromise(2).catch((err) => {
       assert.strictEqual(err, true);
     });
   });
-  it('# Performs left-to-right function composition', function() {
-    const add5 = x => x + 5;
+  it('# Performs left-to-right function composition', function () {
+    const add5 = (x) => x + 5;
     const multiply = (x, y) => x * y;
     const multiplyAddAdd5 = adapter.pipeFunctions(multiply, add5);
     assert.strictEqual(multiplyAddAdd5(5, 2), 15);
   });
-  it('# Reorders arguments in invoked function', function() {
+  it('# Reorders arguments in invoked function', function () {
     const re = adapter.rearg(
-      function(...args) {
+      function (...args) {
         return args;
       },
       [2, 1, 0]
     );
     assert.deepStrictEqual(re('a', 'b', 'c'), ['c', 'b', 'a']);
   });
-  it('# Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.', function() {
+  it('# Takes a variadic function and returns a closure that accepts an array of arguments to map to the inputs of the function.', function () {
     const arrayMax = adapter.spreadOver(Math.max);
     assert.strictEqual(arrayMax([1, 2, 3]), 3);
   });
-  it('# Discards arguments after the first one', function() {
+  it('# Discards arguments after the first one', function () {
     assert.deepStrictEqual(['1', '2', '3'].map(adapter.unary(parseInt)), [
       1,
       2,
-      3
+      3,
     ]);
   });
 });

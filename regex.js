@@ -4,5 +4,5 @@ function removeFirstOrLastSpaces(str) {
 }
 
 module.exports = {
-  removeFirstOrLastSpaces
+  removeFirstOrLastSpaces,
 };

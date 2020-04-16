@@ -3,7 +3,7 @@ function Point(x, y) {
   this.y = y;
 }
 
-Point.prototype.r = function() {
+Point.prototype.r = function () {
   return Math.sqrt(this.x * this.x + this.y * this.y);
 };
 

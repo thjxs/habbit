@@ -1,11 +1,11 @@
 const assert = require('assert');
-describe('#property', function() {
+describe('#property', function () {
   var o = {};
   var property = {
     value: 1,
     writable: true,
     enumerable: false,
-    configurable: true
+    configurable: true,
   };
   it('#define', () => {
     Object.defineProperty(o, 'x', property);

@@ -1,6 +1,7 @@
 {
   "dependencies": {},
   "scripts": {
+    "format": "prettier --write --single-quote *.js test/*.js",
     "hint": "jshint",
     "test": "mocha"
   },

@@ -9,7 +9,7 @@ describe('intersection', () => {
     assert.deepStrictEqual(arr.intersect([1, 2, 2, 3], [2, 3, 2, 4, 2]), [
       2,
       3,
-      2
+      2,
     ]);
   });
   it('12, 34', () => {
@@ -26,7 +26,7 @@ describe('intersection v1', () => {
       2,
       3,
       2,
-      2
+      2,
     ]);
   });
   it('12, 34', () => {

@@ -1,7 +1,7 @@
 const assert = require('assert');
 const helpers = require('../helpers');
 
-describe('# helpers isValidXss', function() {
+describe('# helpers isValidXss', function () {
   it('should detect script tags', () => {
     assert.strictEqual(
       helpers.isValidXss("<script/xss>alert('blah')</script/xss>"),
@@ -29,7 +29,7 @@ describe('# helpers isValidXss', function() {
     );
     assert.strictEqual(helpers.isValidXss("onerror=alert('XSS')"), true);
   });
-  it('should not detect non script tags', function() {
+  it('should not detect non script tags', function () {
     assert.strictEqual(helpers.isValidXss('/one/?foo=bar'), false);
     assert.strictEqual(helpers.isValidXss('<safe> tags'), false);
     assert.strictEqual(helpers.isValidXss('<safetag>'), false);

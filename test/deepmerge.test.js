@@ -7,7 +7,7 @@ describe('#deepmerge', () => {
       {},
       JSON.parse('{"myProperty": "a", "__proto__": {"isAdmin": true}}'),
       {
-        clone: false
+        clone: false,
       }
     );
     assert.strictEqual({}.isAdmin, undefined);

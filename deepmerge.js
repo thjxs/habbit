@@ -6,7 +6,7 @@ module.exports = function deepmerge(target, source, options = { clone: true }) {
   const output = options.clone ? { ...target } : target;
 
   if (isObject(target) && isObject(source)) {
-    Object.keys(source).forEach(key => {
+    Object.keys(source).forEach((key) => {
       if (key === '__proto__') {
         return;
       }

@@ -5,5 +5,5 @@ function returnX() {
 }
 
 module.exports = {
-  returnX
+  returnX,
 };

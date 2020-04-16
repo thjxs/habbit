@@ -16,5 +16,5 @@ function asort(array) {
 
 module.exports = {
   sort,
-  asort
+  asort,
 };

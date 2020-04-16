@@ -78,12 +78,12 @@ describe('#this', () => {
       c: 3,
       get average() {
         return (this.a + this.b + this.c) / 3;
-      }
+      },
     };
     Object.defineProperty(o, 'sum', {
       get: sum,
       enumerable: true,
-      configurable: true
+      configurable: true,
     });
     it('#sum', () => {
       assert.deepStrictEqual(o.sum, 6);

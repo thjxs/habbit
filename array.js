@@ -1,14 +1,14 @@
 function intersect(nums1, nums2) {
   const map = {};
   const res = [];
-  nums1.forEach(function(v) {
+  nums1.forEach(function (v) {
     if (map[v]) {
       map[v] += 1;
     } else {
       map[v] = 1;
     }
   });
-  nums2.forEach(function(v) {
+  nums2.forEach(function (v) {
     if (map[v]) {
       res.push(v);
       map[v]--;
@@ -19,7 +19,7 @@ function intersect(nums1, nums2) {
 
 function intersect_1(nums1, nums2) {
   const s = new Set(nums1);
-  return nums2.filter(x => s.has(x));
+  return nums2.filter((x) => s.has(x));
 }
 
 function moveZeroes(nums) {
@@ -57,7 +57,7 @@ function rotate(matrix) {
     for (let j = 0; j < index; j++) {
       [matrix[index][j], matrix[j][index]] = [
         matrix[j][index],
-        matrix[index][j]
+        matrix[index][j],
       ];
     }
   }
@@ -67,5 +67,5 @@ module.exports = {
   intersect_1,
   moveZeroes,
   removeDuplicatezs,
-  rotate
+  rotate,
 };
