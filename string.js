@@ -28,7 +28,7 @@ function matchParentheses(str) {
   const mapper = {
     ')': '(',
     ']': '[',
-    '}': '{'
+    '}': '{',
   };
   const leftParentheses = ['(', '[', '{'];
 
@@ -49,10 +49,7 @@ function matchParentheses(str) {
 }
 
 function reverseString(str) {
-  return str
-    .split('')
-    .reverse()
-    .join('');
+  return str.split('').reverse().join('');
 }
 
 /**
@@ -65,9 +62,20 @@ function getWords(str) {
   return str.trim().split(/\s+/g);
 }
 
+function jsonToUrl(obj) {
+  const arr = Object.entries(obj);
+  return arr.reduce((s, i) => {
+    if (i[1]) {
+      return (s += `&${i[0]}=${i[1]}`);
+    }
+    return s;
+  }, '');
+}
+
 module.exports = {
   firstUniqChar,
   matchParentheses,
   reverseString,
-  getWords
+  getWords,
+  jsonToUrl,
 };

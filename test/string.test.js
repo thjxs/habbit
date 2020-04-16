@@ -43,3 +43,14 @@ describe('get words', () => {
     assert.deepStrictEqual(str.getWords('    hello word  '), wordsArr);
   });
 });
+
+describe('test json to url', () => {
+  it('{foo: "bar"}', () => {
+    const url = str.jsonToUrl({ foo: 'bar' });
+    assert.strictEqual(url, '&foo=bar');
+  });
+  it('{foo: "bar", zoo: undefined, add: null}', () => {
+    const url = str.jsonToUrl({ foo: 'bar', zoo: undefined, add: null });
+    assert.strictEqual(url, '&foo=bar');
+  });
+});
