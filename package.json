@@ -6,11 +6,11 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "husky": "^4.2.0",
-    "jshint": "^2.11.0",
-    "lint-staged": "^10.0.0",
-    "mocha": "^7.1.0",
-    "prettier": "^2.0.1"
+    "husky": "^4.3",
+    "jshint": "^2.12",
+    "lint-staged": "^10.4",
+    "mocha": "^8.1",
+    "prettier": "^2.1"
   },
   "husky": {
     "hooks": {
