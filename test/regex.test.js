@@ -1,5 +1,5 @@
 const assert = require('assert');
-const regex = require('../regex');
+const regex = require('../src/regex');
 
 describe('# replace', function () {
   it('# remove first or last spaces', function () {

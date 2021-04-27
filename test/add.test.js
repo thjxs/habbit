@@ -1,4 +1,4 @@
-var add = require('../add.js');
+var add = require('../src/add.js');
 
 const assert = require('assert');
 

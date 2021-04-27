@@ -1,5 +1,5 @@
-var Car = require('../Car.js');
-var Point = require('../point.js');
+var Car = require('../src/Car.js');
+var Point = require('../src/point.js');
 
 const assert = require('assert');
 

@@ -1,5 +1,5 @@
 const assert = require('assert');
-const adapter = require('../adapter');
+const adapter = require('../src/adapter');
 
 describe('# adapter', function () {
   it('# call provider function with up to n arguments', () => {

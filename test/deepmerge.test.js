@@ -1,4 +1,4 @@
-const deepmerge = require('../deepmerge');
+const deepmerge = require('../src/deepmerge');
 const assert = require('assert');
 
 describe('#deepmerge', () => {

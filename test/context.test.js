@@ -1,4 +1,4 @@
-const ct = require('../context');
+const ct = require('../src/context');
 const assert = require('assert');
 
 function returnX(x) {

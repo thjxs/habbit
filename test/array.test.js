@@ -1,4 +1,4 @@
-const arr = require('../array');
+const arr = require('../src/array');
 const assert = require('assert');
 
 describe('intersection', () => {

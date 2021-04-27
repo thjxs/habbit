@@ -1,5 +1,5 @@
 const assert = require('assert');
-const helpers = require('../helpers');
+const helpers = require('../src/helpers');
 
 describe('# helpers isValidXss', function () {
   it('should detect script tags', () => {

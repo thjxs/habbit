@@ -1,4 +1,4 @@
-const setUtil = require('../set');
+const setUtil = require('../src/set');
 const assert = require('assert');
 
 describe('isSuperset', () => {

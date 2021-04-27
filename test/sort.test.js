@@ -1,4 +1,4 @@
-var sort = require('../sort.js');
+var sort = require('../src/sort.js');
 
 const assert = require('assert');
 

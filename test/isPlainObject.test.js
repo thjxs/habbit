@@ -1,5 +1,5 @@
 const assert = require('assert');
-const isPlainObject = require('../isPlainObject');
+const isPlainObject = require('../src/isPlainObject');
 
 describe('# is plain object', function () {
   it('new Date()', function () {

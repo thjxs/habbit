@@ -1,4 +1,4 @@
-let str = require('../string.js');
+let str = require('../src/string.js');
 const assert = require('assert');
 
 describe('unique char', () => {

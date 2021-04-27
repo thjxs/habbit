@@ -1,5 +1,5 @@
 const assert = require('assert');
-const scope = require('../scope');
+const scope = require('../src/scope');
 
 describe('# function scope', function () {
   var outsideScope = 'test';
