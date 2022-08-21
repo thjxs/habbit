@@ -3,6 +3,12 @@ function removeFirstOrLastSpaces(str) {
   return str.replace(reg, '');
 }
 
+function addACommaInThousands(str) {
+  const reg = /\B(?=(\d{3})+$)/g;
+  return str.replace(reg, ',');
+}
+
 module.exports = {
+  addACommaInThousands,
   removeFirstOrLastSpaces,
 };
