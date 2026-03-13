@@ -1,4 +1,4 @@
-const assert = require('assert').strict;
+import { strict as assert } from 'assert';
 
 describe('equal', () => {
   describe('object', () => {

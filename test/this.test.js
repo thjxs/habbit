@@ -1,11 +1,11 @@
-const assert = require('assert');
+import { deepStrictEqual, strictEqual } from 'assert';
 
 describe('#this', () => {
   it('#function context', () => {
     function f1() {
       return this;
     }
-    assert.deepStrictEqual(f1(), global);
+    deepStrictEqual(f1(), global);
   });
   it('#strict function context', () => {
     function f2() {
@@ -14,7 +14,7 @@ describe('#this', () => {
       return this;
       /* jshint ignore:end */
     }
-    assert.deepStrictEqual(f2(), undefined);
+    deepStrictEqual(f2(), undefined);
   });
   describe('#use call() or apply()', () => {
     var obj = { a: 'Custom' };
@@ -23,13 +23,13 @@ describe('#this', () => {
       return this.a;
     }
     it('# global', () => {
-      assert.deepStrictEqual(whatsThis(), undefined);
+      deepStrictEqual(whatsThis(), undefined);
     });
     it('#use call', () => {
-      assert.deepStrictEqual(whatsThis.call(obj), 'Custom');
+      deepStrictEqual(whatsThis.call(obj), 'Custom');
     });
     it('# apply', () => {
-      assert.deepStrictEqual(whatsThis.apply(obj), 'Custom');
+      deepStrictEqual(whatsThis.apply(obj), 'Custom');
     });
   });
   it('# bind', () => {
@@ -37,7 +37,7 @@ describe('#this', () => {
       return this.a;
     }
     var b = f.bind({ a: 'az' });
-    assert.deepStrictEqual(b(), 'az');
+    deepStrictEqual(b(), 'az');
   });
   it('# bind only works once', () => {
     function f() {
@@ -46,26 +46,26 @@ describe('#this', () => {
     var g = f.bind({ a: 'az' });
     var h = g.bind({ a: 'we' });
     var o = { a: 33, f: f, g: g, h: h };
-    assert.deepStrictEqual(o.a, o.f());
-    assert.deepStrictEqual(o.g(), o.h());
-    assert.strictEqual(o.g(), 'az');
+    deepStrictEqual(o.a, o.f());
+    deepStrictEqual(o.g(), o.h());
+    strictEqual(o.g(), 'az');
   });
   describe('# arrow function', () => {
     var globalObject = this;
     var foo = () => this;
     var obj = { func: foo };
     it('# globalObject', () => {
-      assert.deepStrictEqual(foo(), globalObject);
+      deepStrictEqual(foo(), globalObject);
     });
     it('# call as a method of an object', () => {
-      assert.deepStrictEqual(obj.func(), globalObject);
+      deepStrictEqual(obj.func(), globalObject);
     });
     it('# Attempt to set this using bind', () => {
-      assert.deepStrictEqual(foo.call(obj), globalObject);
+      deepStrictEqual(foo.call(obj), globalObject);
     });
     it('# Attempt to set this using bind', () => {
       foo.bind(obj);
-      assert.deepStrictEqual(foo(), globalObject);
+      deepStrictEqual(foo(), globalObject);
     });
   });
   describe('# this with a getter or setter', () => {
@@ -86,10 +86,10 @@ describe('#this', () => {
       configurable: true,
     });
     it('#sum', () => {
-      assert.deepStrictEqual(o.sum, 6);
+      deepStrictEqual(o.sum, 6);
     });
     it('average', () => {
-      assert.deepStrictEqual(o.average, 2);
+      deepStrictEqual(o.average, 2);
     });
   });
 });

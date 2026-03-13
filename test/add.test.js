@@ -1,16 +1,16 @@
-var add = require('../src/add.js');
+import add from '../src/add.js';
 
-const assert = require('assert');
+import { strictEqual } from 'assert';
 
 describe('#add', () => {
   describe('#a1', () => {
     it('2', () => {
-      assert.strictEqual(add(1, 1), 2);
+      strictEqual(add(1, 1), 2);
     });
   });
   describe('#a2', () => {
     it('u', () => {
-      assert.strictEqual(add(1), NaN);
+      strictEqual(add(1), NaN);
     });
   });
 });

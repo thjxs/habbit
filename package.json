@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "format": "prettier --write --single-quote src/*.js test/*.js",
     "hint": "jshint ./src/",

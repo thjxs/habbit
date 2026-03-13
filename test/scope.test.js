@@ -1,18 +1,18 @@
-const assert = require('assert');
-const scope = require('../src/scope');
+import { strictEqual } from 'assert';
+import { returnX } from '../src/scope';
 
-describe('# function scope', function () {
+describe('# function scope', function() {
   var outsideScope = 'test';
-  it('# test hosting var', function () {
-    assert.strictEqual('test', outsideScope);
+  it('# test hosting var', function() {
+    strictEqual('test', outsideScope);
   });
-  it('# hosting', function () {
-    assert.strictEqual(undefined, outsideScope);
+  it('# hosting', function() {
+    strictEqual(undefined, outsideScope);
     var outsideScope = 'hosting';
-    assert.strictEqual('hosting', outsideScope);
+    strictEqual('hosting', outsideScope);
   });
-  it('# scope chain', function () {
+  it('# scope chain', function() {
     var x = 'new x';
-    assert.strictEqual('x', scope.returnX());
+    strictEqual('x', returnX());
   });
 });

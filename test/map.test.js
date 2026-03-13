@@ -1,21 +1,21 @@
-const assert = require('assert');
+import { deepStrictEqual, notStrictEqual, strictEqual } from 'assert';
 
 describe('#map', () => {
   describe('#clone', () => {
     it('deep strict equal', () => {
       const original = new Map([[1, 'one']]);
       const clone = new Map(original);
-      assert.deepStrictEqual(original, clone);
+      deepStrictEqual(original, clone);
     });
     it('notStrictEqual', () => {
       const original = new Map([[1, 'one']]);
       const clone = new Map(original);
-      assert.notStrictEqual(original, clone);
+      notStrictEqual(original, clone);
     });
     it('strictEqual', () => {
       const original = new Map([[1, 'one']]);
       const clone = original;
-      assert.strictEqual(original, clone);
+      strictEqual(original, clone);
     });
   });
   describe('#merge', () => {
@@ -35,7 +35,7 @@ describe('#map', () => {
         [2, 'dos'],
       ]);
       const merged = new Map([...first, ...second]);
-      assert.deepStrictEqual(merged, expected);
+      deepStrictEqual(merged, expected);
     });
     it('merge with array', () => {
       const first = new Map([
@@ -54,7 +54,7 @@ describe('#map', () => {
         [2, 'dos'],
       ]);
       const merged = new Map([...first, [4, 'arr'], ...second, [1, 'new']]);
-      assert.deepStrictEqual(merged, expected);
+      deepStrictEqual(merged, expected);
     });
   });
 });

@@ -1,7 +1,7 @@
-var Car = require('../src/Car.js');
-var Point = require('../src/point.js');
+import Car from '../src/Car.js';
+import Point from '../src/point.js';
 
-const assert = require('assert');
+import { deepStrictEqual, notStrictEqual, strictEqual } from 'assert';
 
 describe('#class', () => {
   describe('#private and prototype', () => {
@@ -10,23 +10,23 @@ describe('#class', () => {
       const c2 = new Car();
       c1.arr.push(1);
       c2.arr.push(2);
-      assert.deepStrictEqual(c1.arr, [1]);
-      assert.deepStrictEqual(c2.arr, [2]);
-      assert.notStrictEqual(c1.arr, c2.arr);
+      deepStrictEqual(c1.arr, [1]);
+      deepStrictEqual(c2.arr, [2]);
+      notStrictEqual(c1.arr, c2.arr);
     });
     it('prototype', () => {
       const c1 = new Car();
       const c2 = new Car();
       c1.condition.push(1);
       c2.condition.push(2);
-      assert.deepStrictEqual(c1.condition, c2.condition);
+      deepStrictEqual(c1.condition, c2.condition);
     });
   });
 });
 
-describe('#prototype', function () {
+describe('#prototype', function() {
   it('# r', () => {
     var p = new Point(3, 4);
-    assert.strictEqual(p.r(), 5);
+    strictEqual(p.r(), 5);
   });
 });

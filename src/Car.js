@@ -6,4 +6,4 @@ class Car {
 
 Car.prototype.condition = [];
 
-module.exports = Car;
+export default Car;

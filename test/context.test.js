@@ -1,12 +1,12 @@
-const ct = require('../src/context');
-const assert = require('assert');
+import { createFunc } from '../src/context';
+import { strictEqual } from 'assert';
 
 function returnX(x) {
   return x;
 }
 describe('context', () => {
   it('arguments', () => {
-    rx = ct.createFunc(returnX);
-    assert.strictEqual(rx(12), 12);
+    rx = createFunc(returnX);
+    strictEqual(rx(12), 12);
   });
 });

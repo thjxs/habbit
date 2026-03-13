@@ -1,4 +1,4 @@
-module.exports = function (obj) {
+export default function(obj) {
   if (typeof obj !== 'object' || obj === null) {
     return false;
   }

@@ -43,7 +43,7 @@ function difference(setA, setB) {
   return _difference;
 }
 
-module.exports = {
+export default {
   isSuperset,
   union,
   intersection,

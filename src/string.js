@@ -72,7 +72,7 @@ function jsonToUrl(obj) {
   }, '');
 }
 
-module.exports = {
+export default {
   firstUniqChar,
   matchParentheses,
   reverseString,

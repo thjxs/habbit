@@ -4,6 +4,6 @@ function returnX() {
   return x;
 }
 
-module.exports = {
+export default {
   returnX,
 };

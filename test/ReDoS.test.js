@@ -1,4 +1,4 @@
-const assert = require('assert');
+import { strictEqual } from 'assert';
 
 describe('# ReDoS', () => {
   it('# fix re do regex', () => {
@@ -11,13 +11,12 @@ describe('# ReDoS', () => {
       try {
         // const match = /^data:(?<type>.*?),(?<data>.*?)(?:#(?<hash>.*))?$/.exec(url);
 
-        const match = /^data:(?<type>[^,]*?),(?<data>[^#]*?)(?:#(?<hash>.*))?$/.exec(
-          url
-        );
-      } catch {}
+        const match =
+          /^data:(?<type>[^,]*?),(?<data>[^#]*?)(?:#(?<hash>.*))?$/.exec(url);
+      } catch { }
 
       const diff = Date.now() - start;
-      assert.strictEqual(diff < 100, true);
+      strictEqual(diff < 100, true);
     }
   });
 });

@@ -1,14 +1,14 @@
 function intersect(nums1, nums2) {
   const map = {};
   const res = [];
-  nums1.forEach(function (v) {
+  nums1.forEach(function(v) {
     if (map[v]) {
       map[v] += 1;
     } else {
       map[v] = 1;
     }
   });
-  nums2.forEach(function (v) {
+  nums2.forEach(function(v) {
     if (map[v]) {
       res.push(v);
       map[v]--;
@@ -62,7 +62,7 @@ function rotate(matrix) {
     }
   }
 }
-module.exports = {
+export default {
   intersect,
   intersect_1,
   moveZeroes,

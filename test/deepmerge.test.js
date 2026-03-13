@@ -1,5 +1,5 @@
-const deepmerge = require('../src/deepmerge');
-const assert = require('assert');
+import deepmerge from '../src/deepmerge';
+import { strictEqual } from 'assert';
 
 describe('#deepmerge', () => {
   it('should not be subject to prototype pollution', () => {
@@ -10,6 +10,6 @@ describe('#deepmerge', () => {
         clone: false,
       }
     );
-    assert.strictEqual({}.isAdmin, undefined);
+    strictEqual({}.isAdmin, undefined);
   });
 });

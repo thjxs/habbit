@@ -8,7 +8,7 @@ function addACommaInThousands(str) {
   return str.replace(reg, ',');
 }
 
-module.exports = {
+export default {
   addACommaInThousands,
   removeFirstOrLastSpaces,
 };

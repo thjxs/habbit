@@ -1,4 +1,4 @@
-const assert = require('assert');
+import { strictEqual } from 'assert';
 function test(p) {
   return p;
 }
@@ -10,11 +10,11 @@ function testParametersWithDefaultValue(p) {
   return p;
 }
 
-describe('#function paramaters', function () {
-  it('#input p', function () {
-    assert.strictEqual(test(1), 1);
+describe('#function paramaters', function() {
+  it('#input p', function() {
+    strictEqual(test(1), 1);
   });
-  it('#test parameters with default value', function () {
-    assert.strictEqual(testParametersWithDefaultValue(), defaultValue);
+  it('#test parameters with default value', function() {
+    strictEqual(testParametersWithDefaultValue(), defaultValue);
   });
 });

@@ -14,7 +14,7 @@ function asort(array) {
   array.reverse();
 }
 
-module.exports = {
+export default {
   sort,
   asort,
 };
